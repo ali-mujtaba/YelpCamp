@@ -15,10 +15,6 @@ var seedDB = require("./seeds");
 mongoose.connect("mongodb+srv://hostmaster:webdevbootcamp@cluster0-zwrwb.mongodb.net/test?retryWrites=true&w=majority", {
 	useNewUrlParser: true,
 	useCreateIndex: true
-}).then(function(){
-	console.log("Connected to DB");
-}).catch(err,function(){
-	console.log("ERROR: "+err.message);
 });
 //seedDB();
 app.use(bodyParser.urlencoded({extended: true}));
