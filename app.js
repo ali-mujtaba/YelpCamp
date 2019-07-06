@@ -11,7 +11,15 @@ var User = require('./models/user');
 var Campground = require('./models/campground');
 var Comment = require('./models/comment');
 var seedDB = require("./seeds");
-mongoose.connect("mongodb://localhost/yelp_camp", {useNewUrlParser: true});
+// mongoose.connect("mongodb://localhost/yelp_camp", {useNewUrlParser: true});
+mongoose.connect("mongodb+srv://hostmaster:webdevbootcamp@cluster0-zwrwb.mongodb.net/test?retryWrites=true&w=majority", {
+	useNewUrlParser: true,
+	useCreateIndex: true
+}).then(function(){
+	console.log("Connected to DB");
+}).catch(err,function(){
+	console.log("ERROR: "+err.message);
+});
 //seedDB();
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine","ejs");
