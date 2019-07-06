@@ -11,8 +11,8 @@ var User = require('./models/user');
 var Campground = require('./models/campground');
 var Comment = require('./models/comment');
 var seedDB = require("./seeds");
-// mongoose.connect("mongodb://localhost/yelp_camp", {useNewUrlParser: true});
-mongoose.connect("mongodb+srv://hostmaster:webdevbootcamp@cluster0-zwrwb.mongodb.net/test?retryWrites=true&w=majority", {
+var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp";
+mongoose.connect(process.env.DATABASEURL, {
 	useNewUrlParser: true,
 	useCreateIndex: true
 });
